@@ -55,23 +55,3 @@ if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.match
 }
 
 
-// 
-function sendMail(){
-    var params = {
-        name: document.getElementById("name").value,
-        email: document.getElementById("email").value,
-        message: document.getElementById("message").value,
-    };
-}
-
-const serviceID = "service_n8wfeon";
-const templateID = "template_5vl2p8v";
-
-emailjs.send(serviceID, templateID, params).then((res) => {
-    document.getElementById("name").value = "";
-    document.getElementById("email").value = "";
-    document.getElementById("message").value = "";
-    console.log(res);
-    alert("Pesanmu Telah Terkirim");
-})
-.catch((err) => console.log(err));
